@@ -12,10 +12,63 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!-- Local Styling -->
+<link rel="stylesheet" href="assets/css/style.css">
+
 <!-- Firebase Reference -->
 <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
 </head>
 <body>
+<h1 class="heading text-center">Rock, Paper, Scissors</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <p>Choose rock, paper, or scissors, and then press "go!"</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 text-center">
+            <p>What is your name?</p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="element-box col-lg-2 col-lg-offset-2 text-center" data-element="rock">
+            <p>ROCK</p>
+        </div>
+        <div class="element-box col-lg-2 col-lg-offset-1 text-center" data-element="paper">
+            <p>PAPER</p>
+        </div>
+        <div class="element-box col-lg-2 col-lg-offset-1 text-center" data-element="scissors">
+            <p>SCISSORS</p>
+        </div>
+
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="user1-space col-lg-5 text-center">
+            <p class="user1-name">Player 1</p>
+            <p class="user1-choice">Rock</p>
+            <img src="" class="user1-choice-pic">
+        </div>
+        <div class="versus col-lg-2 text-center">
+            <p>VS</p>
+        </div>
+        <div class="user2-space col-lg-5 text-center">
+            <p class="user2-name">Player 2</p>
+            <p class="user2-choice">Rock</p>
+            <img src="" class="user1-choice-pic">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+        </div>
+        <div class="col-lg-12">
+        </div>
+    </div>
+</div>
+
 
 <!-- Javascript -->
 <script src="assets/js/game.js"></script>
