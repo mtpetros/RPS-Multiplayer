@@ -3,3 +3,14 @@
     border-width: 1.5px;
     border-color: black;
 }
+
+#rock, #paper {
+    width: 200px;
+    height: 200px;
+}
+
+#scissors {
+    width: 250px;
+    height: 200px;
+}
+

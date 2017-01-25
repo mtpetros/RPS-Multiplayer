@@ -15,12 +15,18 @@ var ref = database.ref();
 
 var sUser1;
 var sUser2;
+var state;
 
 ref.on("child_added", function(snapshot) {
   if (snapshot.child("user1").exists()) {
     sUser1 = snapshot.val().user1;
+    $(".user1-choice").html("?");
+    $(".instructions").html("Player 2's Turn!")
+    state = "ready";
   }
 });
+
+
 
 // ref.once("value")
 //   .then(function(snapshot) {
@@ -114,33 +120,62 @@ var game = {
     if (sUser1 === "rock") {
       if (sUser2 === "rock") {
         console.log("draw!");
+        $(".winner").html('<p>draw</p>');
       } else if (sUser2 === "paper") {
         console.log("user2 wins!");
+        $(".winner").html('<p>player 2 wins!</p>');
       } else {
         console.log("user1 wins!");
+        $(".winner").html('<p>player 1 wins!</p>');
       }
     } else if (sUser1 === "paper") {
       if (sUser2 === "rock") {
         console.log("user1 wins!");
+        $(".winner").html('<p>player 1 wins!</p>');
       } else if (sUser2 === "paper") {
         console.log("draw");
+        $(".winner").html('<p>draw</p>');
       } else {
         console.log("user2 wins!");
+        $(".winner").html('<p>player 2 wins!</p>');
       }
     } else {
       if (sUser2 === "rock") {
         console.log("user2 wins!");
+        $(".winner").html('<p>player 2 wins!</p>');
       } else if (sUser2 === "paper") {
         console.log("user1 wins!");
+        $(".winner").html('<p>player 1 wins!</p>');
       } else {
         console.log("draw");
+        $(".winner").html('<p>draw</p>');
       }
+    }
+  },
+
+  reset: function() {
+    ref.remove();
+    sUser1 = undefined;
+    sUser2 = undefined;
+    $('.instructions').html("");
+    $('.user1-choice').html("Rock, Paper, or Scissors?");
+    game.user1.client();
+  },
+
+  waitForServer: function() {
+      if (state === "ready") {
+      game.user2.client();
+    } else {
+      game.user1.client();
     }
   }
 };
 
+setTimeout(game.waitForServer, 1000);
+//$('#reset').on('click', game.reset);
 
-game.user1.client();
+
+
 
 
 
