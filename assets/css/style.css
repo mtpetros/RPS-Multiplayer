@@ -1,3 +1,22 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    background-color: rgb(220,220,255);
+
+}
+
+.heading {
+    font-size: 60px;
+}
+
+.instructions {
+    height: 50px;
+    font-size: 35px;
+}
+
+.player1-score, .player2-score {
+    font-size: 25px;
+}
+
 .rock-box, .paper-box, .scissors-box {
     border-style: solid;
     border-width: 1.5px;
@@ -12,5 +31,31 @@
 #scissors {
     width: 250px;
     height: 200px;
+}
+
+.user1-space, .user2-space, .versus {
+    font-size: 20px;
+}
+
+.winner {
+    height: 125px;
+    font-size: 35px;
+    box-sizing: border-box;
+}
+
+#player1-chat, #player2-chat {
+    border-radius: 5px;
+}
+
+#chat-box {
+    background-color: rgb(255,255,255);
+    border-style: solid;
+    border-width: 1.5px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    text-align: left;
+    height: 150px;
+    border-radius: 25px;
+    font-size: 20px;
 }
 

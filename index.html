@@ -17,19 +17,29 @@
 
 <!-- Firebase Reference -->
 <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
 </head>
 <body>
 <h1 class="heading text-center">Rock, Paper, Scissors</h1>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="instructions col-lg-12 text-center">
-            <p>Choose rock, paper, or scissors, and then press "go!"</p>
+            <p>Choose rock, paper, or scissors!</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4 text-center">
-            <p>What is your name?</p>
-
+    <div class="score-box row text-center">
+        <div class="player1-score col-lg-2 col-lg-offset-1">
+            <p>Player 1 Score</p>
+            <p>Wins: <span id="player1-wins"></span></p>
+            <p>Losses: <span id="player1-losses"></span></p>
+        </div>
+        <div class="player2-score col-lg-2 col-lg-offset-6">
+            <p>Player 2 Score</p>
+            <p>Wins: <span id="player2-wins"></span></p>
+            <p>Losses: <span id="player2-losses"></span></p>
         </div>
     </div>
     <div class="row">
@@ -47,27 +57,36 @@
         </div>
     </div>
     <div class="row">
-        <div class="user1-space col-lg-5 text-center">
+        <div class="user1-space col-lg-4 text-center">
             <p class="user1-name">Player 1</p>
             <p class="user1-choice">Rock, Paper, or Scissors?</p>
-            <img src="" class="user1-choice-pic">
+            <form>
+                Player 1 chat<br>
+                <input type="text" id="player1-chat">
+                <input type="submit" value="submit" id="player1-submit">
+            </form>
         </div>
-        <div class="versus col-lg-2 text-center">
+        <div class="versus col-lg-4 text-center">
             <p>VS</p>
         </div>
-        <div class="user2-space col-lg-5 text-center">
+        <div class="user2-space col-lg-4 text-center">
             <p class="user2-name">Player 2</p>
             <p class="user2-choice">Rock, Paper, or Scissors?</p>
-            <img src="" class="user1-choice-pic">
+             <form>
+                Player 2 chat<br>
+                <input type="text" id="player2-chat">
+                <input type="submit" value="submit" id="player2-submit">
+            </form>
         </div>
     </div>
     <div class="row">
         <div class="winner col-lg-12 text-center">
         </div>
-        <div class="col-lg-12">
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 text-center" id="chat-box">
         </div>
     </div>
-</div>
 
 
 <!-- Javascript -->
